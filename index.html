@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="weather-app">
+    <div class="location">
+      <label for="city-input">Enter City:</label>
+      <input type="text" id="city-input" placeholder="City Name">
+      <ul id="autocomplete-list"></ul>
+      <button id="submit-button">Get Weather</button>
+      <h1 id="city"></h1>
+      <p id="country"></p>
+    </div>
+    <div class="temperature">
+      <h2 id="temperature"></h2>
+    </div>
+    <div class="conditions">
+      <p id="description"></p>
+      <img id="icon" src="img/weather-icon.png" alt="Weather Icon">
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

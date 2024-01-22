@@ -1,0 +1,211 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #3498db;
+$font-color: #fff;
+$accent-color: #e74c3c;
+$font-family: "Marques", sans-serif;
+
+@import url("https://www.fontspace.com/marques-vintage-font-f96036");
+@font-face {
+  font-family: "Marques";
+  src: url("font/MarquesfreeStampitalic-rgnGO.otf") format("truetype");
+}
+
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("img/screen-12.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.result-container {
+  background-image: url("img/blue-cloudy.avif");
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 250px; // Ajustement ici
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleIn 0.5s ease-out forwards;
+  transition: background-color 0.5s;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 57vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 25px;
+  h1 {
+    color: $accent-color;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInLetter 1.5s ease-out forwards;
+    }
+  }
+
+  @keyframes fadeInLetter {
+    to {
+      opacity: 2;
+      transform: translateY(0);
+    }
+  }
+
+  .city-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+  }
+
+  .forecast-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #349dde;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.weather-app {
+  background-image: url("img/blue-cloudy.avif");
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 200px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleIn 0.5s ease-out forwards;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: rgba(173, 216, 230, 1);
+  }
+
+  @keyframes scaleIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .location {
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: black;
+      font-size: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 2px solid $primary-color;
+      border-radius: 8px;
+      font-family: $font-family;
+      transition: border-color 0.5s, color 0.5s;
+      font-size: 16px;
+      background-color: #87ceeb;
+
+      &:focus {
+        border-color: $accent-color;
+        color: $accent-color;
+      }
+    }
+    ul {
+      list-style: none; // Remove default list styles
+      padding: 0;
+      margin: 0;
+      position: absolute; // Position the list absolutely
+      width: 100%; // Make it full width
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Add a subtle box shadow
+      background-color: #349dde; // Set the background color
+      border-radius: 8px; // Add border-radius for rounded corners
+      overflow-y: auto; // Add scroll if needed
+      max-height: 150px; // Set a maximum height to limit the dropdown size
+
+      li {
+        padding: 10px; // Add padding to each list item
+        font-size: 16px; // Set the font size
+        color: $accent-color; // Set the text color
+        cursor: pointer; // Change cursor on hover
+
+        &:hover {
+          background-color: $secondary-color; // Change background color on hover
+          color: white; // Change text color on hover
+        }
+      }
+    }
+
+    button {
+      background-color: $accent-color;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: $font-family;
+      font-size: 18px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-left: 5px;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+
+    h1 {
+      margin: 10px 0;
+      color: $primary-color;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      color: $font-color;
+    }
+
+    margin-left: -10px;
+  }
+
+  .temperature {
+    margin: 20px 0;
+    h2 {
+      color: $accent-color;
+      font-size: 2.5em;
+    }
+  }
+
+  .conditions {
+    p {
+      color: $font-color;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
